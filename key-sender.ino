@@ -1,20 +1,14 @@
-#include "buttons.h"
+#include "keypad.h"
 
-buttons btns(19);
+Keypad keypad(14, 1);
 
-void setup() {
-  // put your setup code here, to run once
-  Serial.begin(9600);
+void setup() 
+{
+  //Serial.begin(9600);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  btns.update();
-
-  if(btns.buttonDown() >= 0)
-  {
-    Serial.println(btns.buttonDown());
-  }
-
+void loop() 
+{
+  keypad.update();
   delay(50);
 }
